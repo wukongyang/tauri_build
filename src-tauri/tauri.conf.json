@@ -1,0 +1,122 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:8848/",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "MaxenTeacher",
+    "version": "2.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "process": {
+        "all": true,
+        "relaunch": true
+      },
+      "http": {
+        "scope": ["http://**", "https://**"]
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "fs": {
+        "all": true,
+        "scope": ["*", "$DOWNLOAD/*"]
+      },
+      "window": {
+        "all": true,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "startDragging": true
+      },
+      "clipboard": {
+        "all": true,
+        "readText": true,
+        "writeText": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "category": "Education",
+      "shortDescription": "迈格森教师桌面端",
+      "longDescription": "迈格森教师桌面端用于迈格森老师查看课表、学生考勤、编排作业等",
+      "windows": {
+        "wix": {
+          "language": "zh-CN"
+        },
+        "nsis": {
+          "languages": ["SimpChinese", "English"],
+          "displayLanguageSelector": true
+        },
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.tauri.maxen",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "targets": "all"
+    },
+    "security": {
+      "csp": null,
+      "dangerousRemoteDomainIpcAccess": [
+        {
+          "windows": ["main"],
+          "domain": "teacher-test.maxeninfo.com",
+          "plugins": ["trusted-plugin", "store"],
+          "enableTauriAPI": true
+        }
+      ]
+    },
+    "updater": {
+      "active": true,
+      "endpoints": ["https://teacher-test.maxeninfo.com/tauri_update.json"],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhCNjMxRTcyRTM5M0Q4ODAKUldTQTJKUGpjaDVqaTBDdnQ2bmVZOGZEQU9XYlZGK2ZjMHhnUkZ1RGRZOHM3Sy8wWWZZQTZweVMK"
+    },
+    "windows": [
+      {
+        "label": "main",
+        "fullscreen": false,
+        "height": 800,
+        "resizable": true,
+        "title": "MaxenTeacher",
+        "width": 1300,
+        "decorations": false,
+        "transparent": true,
+        "closable": true,
+        "center": true,
+        "url": "https://teacher-test.maxeninfo.com",
+        "userAgent": "maxen_teacher 1.0.0"
+      }
+    ],
+    "macOSPrivateApi": true
+  }
+}
