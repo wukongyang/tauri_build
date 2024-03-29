@@ -49,8 +49,8 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.MAXEN_TEACHER_TAURI }}
-           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
           releaseName: 'App Name v__VERSION__' # tauri-action replaces \_\_VERSION\_\_ with the app version.
@@ -61,7 +61,6 @@ jobs:
       - name: Publish to github artifact
         uses: actions/upload-artifact@v2
         with:
-         name: macos-artifact
-         path: /Users/runner/work/tauri_build/tauri_build/src-tauri/target/release/bundle/dmg/*
-         if-no-files-found: error
-
+          name: macos-artifact
+          path: /Users/runner/work/tauri_build/tauri_build/src-tauri/target/release/bundle/dmg/*
+          if-no-files-found: error
