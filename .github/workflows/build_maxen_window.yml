@@ -48,7 +48,9 @@ jobs:
         uses: tauri-apps/tauri-action@v0
 
         env:
-          GITHUB_TOKEN: ${{ secrets.MAXEN_TEACHER_TAURI }}
+           GITHUB_TOKEN: ${{ secrets.MAXEN_TEACHER_TAURI }}
+           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
           releaseName: 'App Name v__VERSION__' # tauri-action replaces \_\_VERSION\_\_ with the app version.
@@ -60,5 +62,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
          name: windows-artifact
-         path: D:\a\maxen_rauri\maxen_rauri\src-tauri\target\release\bundle\nsis\*
+         path: D:\a\tauri_build\tauri_build\src-tauri\target\release\bundle\nsis\*
          if-no-files-found: error
