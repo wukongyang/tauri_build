@@ -40,7 +40,7 @@ fn main() {
 					// MenuItem::Undo.into(),
 					// MenuItem::Redo.into(),
 					// MenuItem::Separator.into(),
-					// MenuItem::Cut.into(),
+					MenuItem::Cut.into(),
 					MenuItem::Copy.into(),
 					MenuItem::Paste.into(),
 					// #[cfg(not(target_os = "macos"))]

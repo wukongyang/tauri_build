@@ -4,11 +4,12 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:8848/",
-    "distDir": "../dist"
+    "distDir": "../dist",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "MaxenTeacher",
-    "version": "2.0.0"
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -23,6 +24,9 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "os": {
+        "all": true
       },
       "fs": {
         "all": true,
@@ -97,9 +101,12 @@
     },
     "updater": {
       "active": true,
-      "endpoints": ["https://teacher-test.maxeninfo.com/tauri_update.json"],
-      "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhCNjMxRTcyRTM5M0Q4ODAKUldTQTJKUGpjaDVqaTBDdnQ2bmVZOGZEQU9XYlZGK2ZjMHhnUkZ1RGRZOHM3Sy8wWWZZQTZweVMK"
+      "endpoints": ["https://teacher-test.maxeninfo.com/update.json"],
+      "dialog": false,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhCNjMxRTcyRTM5M0Q4ODAKUldTQTJKUGpjaDVqaTBDdnQ2bmVZOGZEQU9XYlZGK2ZjMHhnUkZ1RGRZOHM3Sy8wWWZZQTZweVMK",
+      "windows": {
+        "installMode": "passive"
+      }
     },
     "windows": [
       {
