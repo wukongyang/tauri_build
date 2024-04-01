@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaxenTeacher</title>
+    <script src="/lottie.js"></script>
+    <style>
+      body,
+      html {
+        background-color: transparent;
+      }
+      .splash-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #3a86f1;
+        font-size: 12px;
+        user-select: none;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="splash-container">
+      <div id="splash" style="width: 150px; height: 150px"></div>
+      <div>MaxenTeacher启动中...</div>
+    </div>
+  </body>
+  <script>
+    const splash = document.getElementById('splash')
+    lottie.loadAnimation({
+      container: splash, // the dom element that will contain the animation
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/splash.json', // the path to the animation json
+      speed: 1.5,
+    })
+    window.document.addEventListener('contextmenu', (event) => {
+      event.preventDefault()
+    })
+  </script>
+</html>

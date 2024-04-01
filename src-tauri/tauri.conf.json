@@ -3,7 +3,7 @@
   "build": {
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
-    "devPath": "http://localhost:8848/",
+    "devPath": "http://localhost:8080/",
     "distDir": "../dist",
     "withGlobalTauri": true
   },
@@ -46,6 +46,12 @@
         "all": true,
         "readText": true,
         "writeText": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "app": {
+        "all": true
       }
     },
     "bundle": {
@@ -121,7 +127,24 @@
         "closable": true,
         "center": true,
         "url": "https://teacher-test.maxeninfo.com",
-        "userAgent": "maxen_teacher 1.0.0"
+        "userAgent": "maxen_teacher 1.0.0",
+        "visible": false,
+        "minWidth": 1000,
+        "minHeight": 650
+      },
+      {
+        "label": "splashscreen",
+        "fullscreen": false,
+        "center": true,
+        "height": 200,
+        "width": 200,
+        "transparent": true,
+        "resizable": false,
+        "title": "MaxenTeacher",
+        "decorations": false,
+        "visible": true,
+        "alwaysOnTop": false,
+        "url": "/splashscreen.html"
       }
     ],
     "macOSPrivateApi": true

@@ -3,11 +3,14 @@
 	windows_subsystem = "windows"
 )]
 
-use tauri::api::shell;
+use window_shadows::set_shadow;
 use tauri::{
-	AboutMetadata, CustomMenuItem, Manager, Menu, MenuEntry, MenuItem, Submenu, WindowBuilder,
+	Runtime,Manager,AboutMetadata, CustomMenuItem, Menu, MenuEntry, MenuItem, Submenu, WindowBuilder,
 	WindowUrl,
 };
+
+
+
 fn main() {
 	let ctx = tauri::generate_context!();
 
@@ -74,6 +77,20 @@ fn main() {
 			// 	_ => {}
 			// }
 		})
+		.setup(|app| {
+			let splashscreen_window = app.get_window("splashscreen").unwrap();
+			let main_window = app.get_window("main").unwrap();
+			// we perform the initialization code on a new task so the app doesn't freeze
+			tauri::async_runtime::spawn(async move {
+			  println!("Initializing...");
+			  std::thread::sleep(std::time::Duration::from_secs(3));
+			  println!("Done initializing.");
+			  splashscreen_window.close().unwrap();
+			  main_window.show().unwrap();
+			  set_shadow(&main_window, true).expect("Unsupported platform!");
+			});
+			Ok(())
+		  })
 		.run(ctx)
 		.expect("error while running tauri application");
 }
