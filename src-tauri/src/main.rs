@@ -26,6 +26,9 @@ fn main() {
 					MenuItem::Separator.into(),
 					// MenuItem::Services.into(),
 					MenuItem::Separator.into(),
+					MenuItem::Cut.into(),
+					MenuItem::Copy.into(),
+					MenuItem::Paste.into(),
 					MenuItem::Hide.into(),
 					MenuItem::HideOthers.into(),
 					MenuItem::ShowAll.into(),
@@ -37,20 +40,19 @@ fn main() {
 			// 	"操作",
 			// 	Menu::with_items([MenuItem::CloseWindow.into()]),
 			// )),
-			MenuEntry::Submenu(Submenu::new(
-				"操作",
-				Menu::with_items([
-					// MenuItem::Undo.into(),
-					// MenuItem::Redo.into(),
-					// MenuItem::Separator.into(),
-					MenuItem::Cut.into(),
-					MenuItem::Copy.into(),
-					MenuItem::Paste.into(),
-					// #[cfg(not(target_os = "macos"))]
-					// MenuItem::Separator.into(),
-					// MenuItem::SelectAll.into(),
-				]),
-			)),
+			// #[cfg(target_os = "macos")]
+			// MenuEntry::Submenu(Submenu::new(
+			// 	"操作",
+			// 	Menu::with_items([
+			// 		// MenuItem::Undo.into(),
+			// 		// MenuItem::Redo.into(),
+			// 		// MenuItem::Separator.into(),
+					
+			// 		// #[cfg(not(target_os = "macos"))]
+			// 		// MenuItem::Separator.into(),
+			// 		// MenuItem::SelectAll.into(),
+			// 	]),
+			// )),
 			// MenuEntry::Submenu(Submenu::new(
 			// 	"View",
 			// 	Menu::with_items([MenuItem::EnterFullScreen.into()]),
