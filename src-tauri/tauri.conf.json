@@ -127,7 +127,7 @@
         "closable": true,
         "center": true,
         "url": "https://teacher-test.maxeninfo.com",
-        "userAgent": "maxen_teacher 1.0.0",
+        "userAgent": "maxen_teacher 1.0.0 dev",
         "visible": false,
         "minWidth": 1000,
         "minHeight": 650
