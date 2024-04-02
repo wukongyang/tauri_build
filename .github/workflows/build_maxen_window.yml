@@ -2,7 +2,7 @@ name: Build Maxen Windows
 on:
   push:
     tags:
-      - 'v*'
+      - 'v_release_pro*'
   workflow_dispatch:
 
 jobs:

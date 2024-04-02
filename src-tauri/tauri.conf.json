@@ -99,7 +99,7 @@
       "dangerousRemoteDomainIpcAccess": [
         {
           "windows": ["main"],
-          "domain": "teacher-test.maxeninfo.com",
+          "domain": "teacher.maxeninfo.com",
           "plugins": ["trusted-plugin", "store"],
           "enableTauriAPI": true
         }
@@ -107,7 +107,7 @@
     },
     "updater": {
       "active": true,
-      "endpoints": ["https://teacher-test.maxeninfo.com/update.json"],
+      "endpoints": ["https://teacher.maxeninfo.com/update.json"],
       "dialog": false,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhCNjMxRTcyRTM5M0Q4ODAKUldTQTJKUGpjaDVqaTBDdnQ2bmVZOGZEQU9XYlZGK2ZjMHhnUkZ1RGRZOHM3Sy8wWWZZQTZweVMK",
       "windows": {
@@ -126,8 +126,8 @@
         "transparent": true,
         "closable": true,
         "center": true,
-        "url": "https://teacher-test.maxeninfo.com",
-        "userAgent": "maxen_teacher 1.0.0",
+        "url": "https://teacher.maxeninfo.com",
+        "userAgent": "maxen_teacher 1.0.0 pro",
         "visible": false,
         "minWidth": 1000,
         "minHeight": 650
